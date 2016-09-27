@@ -28,7 +28,7 @@ int main()
 	int beginIdx,endIdx,id=0,temp;
 	std::string line;
 	std::string null = "";
-	std::ifstream file("Definitions_POS.txt");
+	std::ifstream file("tmp.txt");
 	std::ofstream fout("Definitions_graph.txt");
 
 	while(getline(file,line))
@@ -57,7 +57,6 @@ int main()
 		}
 
 		fout<<endl;
-		//char c = getchar();
 	}
 	return 0;
 }

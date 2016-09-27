@@ -1,0 +1,34 @@
+Steps to create the WikiNet:
+1. Parse the entire dump file (.xml) - new_Parser.cpp
+  -Parsing extracts the following
+    -Definitions (Arranged alongside article name. Requires cleaning.)
+    -Categories (Prearranged with spaces and commas along side the article name)
+    -Hyperlinks (Prearranged with spaces and commas along side the article name)
+    -Infoboxes (Mostly arranged. Requires some cleaning up.)
+    -Output (Arranged. Extracts Page Number, title, page id, parent id, username)
+2. Cleaning of Links file initially created. - link_edit.cpp
+  -Removes some of the unnecessary lines that are irrelevant to out work.
+3. Create the hyperlink graph - hyperlink_graph.cpp
+  -Creates the hyperlink graph by comparing the links and calculating the Jaccard's coefficient
+  -Could be sped up by using Python data structures like dictionary and json file formats
+4. Create the category graph - category_graph.cpp
+  -There was a slight error in the Category.txt 1st line. Had to remove that manually.
+  -Rest worked fine. Similar to hyperlink graph.
+AFTER THE ABOVE THE MAIN FOCUS IS ON DEFINITIONS
+5. Cleaning of Definitions file initially created. - new_cleaner.cpp
+6. Further cleaning of Definitions file - new_tagremover.cpp
+7. Use the POS tagger on Definitions file
+  -copy the Definitions_clean2.cpp folder to pos_Tagger folder.
+  -run the command ./lapos -m ./model_wsj02-21 < Definitions_clean2.txt > tmp.txt
+  -tmp.txt is the required POS tagged file
+8. Keep the noun, adjectives etc. and remove everything else from the Definitions - new_definition_graph.cpp
+  -arranges the words of required parts of speech in order so that networks can be made.
+9. Form the definition network - definition_network.cpp
+  -Forms the required definition network.
+AFTER THE ABOVE THE MAIN FOCUS IS ON CALCULATING UNIGRAM AND BIGRAM SIMILARITY
+  -
+
+
+Take a sentence as input. Then print the article name. Then travel along the sentence
+and print all the nouns, pronouns, adjectives, adverbs etc.
+FW,JJ,JJR,JJS,NN,NNS,NNP,NNPS
