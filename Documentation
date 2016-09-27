@@ -27,8 +27,3 @@ AFTER THE ABOVE THE MAIN FOCUS IS ON DEFINITIONS
   -Forms the required definition network.
 AFTER THE ABOVE THE MAIN FOCUS IS ON CALCULATING UNIGRAM AND BIGRAM SIMILARITY
   -
-
-
-Take a sentence as input. Then print the article name. Then travel along the sentence
-and print all the nouns, pronouns, adjectives, adverbs etc.
-FW,JJ,JJR,JJS,NN,NNS,NNP,NNPS
